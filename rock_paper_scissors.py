@@ -11,7 +11,16 @@ def main():
    select the same one, it is a tie.
   """)
   player_selection = input("What do you select? (rock, paper, scissors): ")
-  computer_selection = random.choice(["rock", "paper", "scissors"])
+  selections = ["rock", "paper", "scissors"]
+  computer_selection = random.choice(selections)
+  p_idx = selections.index(player_selection)
+  c_idx = selections.index(computer_selection)
+  if p_idx == c_idx:
+    print(f"You both selected {player_selection}. It's a tie!")
+  elif p_idx == c_idx + 1 or (p_idx == 0 and c_idx == 2):
+    print(f'You selected {player_selection}. The computer selected {computer_selection}. You win!')
+  else:
+    print(f'You selected {player_selection}. The computer selected {computer_selection}. You lose...')
 
 if __name__ == '__main__':
   main()
