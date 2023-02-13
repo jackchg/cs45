@@ -1,3 +1,5 @@
+import random
+
 def main():
   print("Hello, welcome to Rock, Paper, Scissors!")
   print("Here are the rules:")
@@ -8,7 +10,8 @@ def main():
    beats paper (by cutting it); and paper beats rock (by covering it). If both players
    select the same one, it is a tie.
   """)
-  selection = input("What do you select? (rock, paper, scissors): ")
+  player_selection = input("What do you select? (rock, paper, scissors): ")
+  computer_selection = random.choice(["rock", "paper", "scissors"])
 
 if __name__ == '__main__':
   main()
